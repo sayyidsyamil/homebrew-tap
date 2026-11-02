@@ -13,7 +13,7 @@ cask "port-pocket" do
 
   # Preview builds are ad-hoc signed, so drop the quarantine flag that Gatekeeper
   # would otherwise use to block the first launch.
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Port Pocket.app"]
   end

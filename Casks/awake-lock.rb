@@ -13,7 +13,7 @@ cask "awake-lock" do
 
   # Preview builds are ad-hoc signed, so drop the quarantine flag that Gatekeeper
   # would otherwise use to block the first launch.
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Awake Lock.app"]
   end
@@ -26,7 +26,7 @@ cask "awake-lock" do
     "~/Library/Caches/io.awakelock.app",
   ]
 
-  caveat <<~EOS
+  caveats <<~EOS
     Closed-lid support installs a root helper and is optional. Enable it from the
     app panel, then remove it with:
       sudo bash "#{appdir}/Awake Lock.app/Contents/Resources/uninstall-helper.sh"
