@@ -1,6 +1,6 @@
 cask "awake-lock" do
   version "0.1.0"
-  sha256 "SHA256_PLACEHOLDER"
+  sha256 "b76462703c829621862d528def6f5c05a9628a9882e6c08e49bc3c4e31ebd5b1"
 
   url "https://github.com/sayyidsyamil/awake-lock/releases/download/v#{version}/Awake-Lock-#{version}.zip"
   name "Awake Lock"

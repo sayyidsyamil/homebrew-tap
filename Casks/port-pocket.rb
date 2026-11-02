@@ -1,6 +1,6 @@
 cask "port-pocket" do
   version "0.1.0"
-  sha256 "SHA256_PLACEHOLDER"
+  sha256 "f0210bfc6654998b7425b65dcf32a5366ea5576ed1dea3ddf01e93b932d68ef5"
 
   url "https://github.com/sayyidsyamil/port-pocket/releases/download/v#{version}/Port-Pocket-#{version}.zip"
   name "Port Pocket"
