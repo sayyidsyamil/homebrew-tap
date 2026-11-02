@@ -23,6 +23,5 @@ brew install --cask port-pocket
 | `port-pocket` | Lists local TCP listeners with process and project detail, and stops them. |
 | `awake-lock` | Keeps the Mac awake for a timed session. |
 
-Both apps are MIT licensed. Homebrew downloads with `curl`, which does not set the
-quarantine attribute, so these launch without a Gatekeeper prompt even though the
-preview builds are not yet notarized.
+Both apps are MIT licensed. The casks clear the quarantine flag after installing, so they
+launch without a Gatekeeper prompt even though the preview builds are not notarized.

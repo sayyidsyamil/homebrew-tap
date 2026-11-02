@@ -7,9 +7,16 @@ cask "awake-lock" do
   desc "Menu-bar app that keeps the Mac awake for a timed work session"
   homepage "https://github.com/sayyidsyamil/awake-lock"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Awake Lock.app"
+
+  # Preview builds are ad-hoc signed, so drop the quarantine flag that Gatekeeper
+  # would otherwise use to block the first launch.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Awake Lock.app"]
+  end
 
   uninstall quit: "io.awakelock.app"
 

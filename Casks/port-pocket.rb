@@ -7,9 +7,16 @@ cask "port-pocket" do
   desc "Menu-bar panel for local TCP listeners and their processes"
   homepage "https://github.com/sayyidsyamil/port-pocket"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Port Pocket.app"
+
+  # Preview builds are ad-hoc signed, so drop the quarantine flag that Gatekeeper
+  # would otherwise use to block the first launch.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Port Pocket.app"]
+  end
 
   uninstall quit: "io.portpocket.app"
 
